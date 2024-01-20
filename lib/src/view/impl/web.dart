@@ -182,7 +182,9 @@ class _WebViewXState extends State<WebViewX> {
 
   void _registerView(String viewType) {
     platformViewRegistry.registerViewFactory(viewType, (int viewId) {
-      return iframe;
+      return iframe
+        ..style.width = '100%'
+        ..style.height = '100%';
     });
   }
 
