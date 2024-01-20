@@ -2,13 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:html' as html;
 import 'dart:js' as js;
+import 'dart:ui_web';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 
-import 'package:webviewx/src/utils/dart_ui_fix.dart' as ui;
+// import 'package:webviewx/src/utils/dart_ui_fix.dart' as ui;
 import 'package:webviewx/src/utils/constants.dart';
 import 'package:webviewx/src/utils/logger.dart';
 import 'package:webviewx/src/utils/utils.dart';
@@ -180,7 +181,7 @@ class _WebViewXState extends State<WebViewX> {
   }
 
   void _registerView(String viewType) {
-    ui.platformViewRegistry.registerViewFactory(viewType, (int viewId) {
+    platformViewRegistry.registerViewFactory(viewType, (int viewId) {
       return iframe;
     });
   }
